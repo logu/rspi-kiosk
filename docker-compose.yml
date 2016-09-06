@@ -1,5 +1,5 @@
-weba:
-  build: .
+web:
+  build: ./tools/docker/dockerfiles/nodejs/
   ports:
    - "80:80"
   expose:
