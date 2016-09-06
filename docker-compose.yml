@@ -1,5 +1,10 @@
+src: 
+ build: ./src
+ 
 web:
   build: ./tools/docker/dockerfiles/nodejs/
+  volumes_from:
+    - src
   ports:
    - "80:80"
   expose:
