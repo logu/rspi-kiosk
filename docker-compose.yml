@@ -1,0 +1,4 @@
+web:
+  build: .
+  expose:
+    - 80
