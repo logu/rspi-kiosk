@@ -1,11 +1,15 @@
-src: 
- build: ./src
- 
-web:
-  build: ./tools/docker/dockerfiles/nodejs/
-  volumes_from:
-    - src
+project: 
+  build: ./src
   ports:
-   - "80:80"
+    - "80:80"
   expose:
     - 80
+
+x11:
+  build: ./tools/docker/dockerfiles/x11/
+  environment:
+    - DISPLAY
+    - QT_X11_NO_MITSHM=1
+  volumes:
+    - /tmp/.X11-unix:/tmp/.X11-unix:rw
+  commande: x
