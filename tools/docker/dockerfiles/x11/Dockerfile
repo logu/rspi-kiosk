@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian
+FROM resin/rpi-raspbian:jessie
 
 RUN sudo apt-get update
 
