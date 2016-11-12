@@ -9,25 +9,30 @@ services:
       - 80
     tty: true
 
-  x11:
-    build: ./tools/docker/dockerfiles/x11/
-    environment:
-      - DISPLAY
-      - QT_X11_NO_MITSHM=1
-    volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix:rw
-    stdin_open: true
-    tty: true
-    privileged: true
+x11:
+  build: ./tools/docker/dockerfiles/x11/
+  environment:
+    - DISPLAY
+    - QT_X11_NO_MITSHM=1
+  volumes:
+    - /tmp/.X11-unix:/tmp/.X11-unix:rw
+  links:
+    - project
+  stdin_open: true
+  tty: true
+  privileged: true
 
   chrome:
     build: ./tools/docker/dockerfiles/chrome/
-    command: chromium-browser -incognito --kiosk http://project:80
+    command: chromium-browser --kiosk http://projet:80 --no-first-run --touch-events=enabled --fast --fast-start --disable-popup-blocking --disable-infobars --disable-session-crashed-bubble --disable-tab-switcher --disable-translate --enable-low-res-tiling
     environment:
       - DISPLAY=:0
       - QT_X11_NO_MITSHM=1
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    links:
+      - project
+      - x11
     stdin_open: true
     tty: true
     privileged: true
