@@ -9,18 +9,18 @@ services:
       - 80
     tty: true
 
-x11:
-  build: ./tools/docker/dockerfiles/x11/
-  environment:
-    - DISPLAY
-    - QT_X11_NO_MITSHM=1
-  volumes:
-    - /tmp/.X11-unix:/tmp/.X11-unix:rw
-  links:
-    - project
-  stdin_open: true
-  tty: true
-  privileged: true
+  x11:
+    build: ./tools/docker/dockerfiles/x11/
+    environment:
+      - DISPLAY
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    links:
+      - project
+    stdin_open: true
+    tty: true
+    privileged: true
 
   chrome:
     build: ./tools/docker/dockerfiles/chrome/
