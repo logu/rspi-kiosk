@@ -1,31 +1,33 @@
-project: 
-  build: ./src
-  command: npm run start
-  ports:
-    - "80:80"
-  expose:
-    - 80
-  tty: true
+version: '2'
+services:
+  project:
+    build: ./src
+    command: npm run start
+    ports:
+      - "80:80"
+    expose:
+      - 80
+    tty: true
 
-x11:
-  build: ./tools/docker/dockerfiles/x11/
-  environment:
-    - DISPLAY
-    - QT_X11_NO_MITSHM=1
-  volumes:
-    - /tmp/.X11-unix:/tmp/.X11-unix:rw
-  stdin_open: true
-  tty: true
-  privileged: true
+  x11:
+    build: ./tools/docker/dockerfiles/x11/
+    environment:
+      - DISPLAY
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    stdin_open: true
+    tty: true
+    privileged: true
 
-chrome:
-  build: ./tools/docker/dockerfiles/chrome/
-  command: chromium-browser -incognito --kiosk http://localhost:80
-  environment:
-    - DISPLAY=:0
-    - QT_X11_NO_MITSHM=1
-  volumes:
-    - /tmp/.X11-unix:/tmp/.X11-unix:rw
-  stdin_open: true
-  tty: true
-  privileged: true
+  chrome:
+    build: ./tools/docker/dockerfiles/chrome/
+    command: chromium-browser -incognito --kiosk http://project:80
+    environment:
+      - DISPLAY=:0
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    stdin_open: true
+    tty: true
+    privileged: true
