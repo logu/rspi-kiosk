@@ -4,6 +4,6 @@ RUN sudo apt-get update
 
 RUN sudo apt-get install --no-install-recommends -y xserver-xorg xinit xserver-xorg-video-fbdev
 
-CMD startx
+CMD X
 
 
