@@ -6,6 +6,10 @@ RUN sudo apt-get update
 
 RUN sudo apt-get install wget curl
 
+RUN sudo apt-get install ttf-mscorefonts-installer
+
+RUN sudo apt-get install unclutter
+
 RUN curl -sSL https://github.com/hypriot/x11-on-HypriotOS/raw/master/install-chromium-browser.sh | bash
 
 USER chromium
