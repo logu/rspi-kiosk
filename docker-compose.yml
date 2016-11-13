@@ -24,7 +24,7 @@ services:
 
   chrome:
     build: ./tools/docker/dockerfiles/chrome/
-    command: chromium-browser --kiosk http://project:80 --no-first-run --touch-events=enabled --fast --fast-start --disable-popup-blocking --disable-infobars --disable-session-crashed-bubble --disable-tab-switcher --disable-translate --enable-low-res-tiling
+    command: chromium-browser --kiosk http://project:80 --no-first-run --touch-events=enabled --fast --fast-start --disable-popup-blocking --disable-infobars --disable-session-crashed-bubble --disable-tab-switcher --disable-translate --enable-low-res-tiling && unclutter -idle 0.01 -root &
     environment:
       - DISPLAY=:0
       - QT_X11_NO_MITSHM=1
