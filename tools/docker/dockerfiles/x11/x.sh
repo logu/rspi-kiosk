@@ -7,4 +7,3 @@ LOCKFILE=/tmp/.X0-lock
 trap "{ rm -f $LOCKFILE ; exit 255; }" SIGTERM
 
 X -s 0 -dpms -nocursor
-exit 0
