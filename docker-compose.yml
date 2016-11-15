@@ -3,6 +3,7 @@ services:
   project:
     build: ./src
     command: npm run start
+    restart: always
     ports:
       - "80:80"
     expose:
@@ -14,6 +15,7 @@ services:
     environment:
       - DISPLAY
       - QT_X11_NO_MITSHM=1
+    restart: always
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
     links:
@@ -25,6 +27,7 @@ services:
   chrome:
     build: ./tools/docker/dockerfiles/chrome/
     command: chromium-browser --kiosk http://project:80 --no-first-run --touch-events=enabled --fast --fast-start --disable-popup-blocking --disable-infobars --disable-session-crashed-bubble --disable-tab-switcher --disable-translate --enable-low-res-tiling
+    restart: always
     environment:
       - DISPLAY=:0
       - QT_X11_NO_MITSHM=1
