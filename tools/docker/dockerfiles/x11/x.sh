@@ -2,8 +2,7 @@
 
 LOCKFILE=/tmp/.X0-lock
 
-# Upon exit, remove lockfile.
+# remove lockfile before launching X.
 
-trap "{ rm -f $LOCKFILE ; exit 255; }" SIGTERM
-
+rm -f $LOCKFILE ;
 X -s 0 -dpms -nocursor
