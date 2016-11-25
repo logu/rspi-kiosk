@@ -8,4 +8,4 @@ WORKDIR /display
 RUN ls
 
 # make port 80 available outside of the image
-EXPOSE 80
+EXPOSE 3000
