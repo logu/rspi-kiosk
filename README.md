@@ -55,11 +55,16 @@ This starter kit includes a build system by which source can be transpiled, conv
 
 ##### Use Webpack
 
-`webpack`: Buils css and transpile JS
+`webpack` : Buils css and transpile JS
 
 #### Directory structure
 
 The root directory generated for the app :
 <pre>
-├──  veggie-forest/
+├──  display
+├──  tools
+├──  wifi-ap
+├──  docker-compose.yml
+├──  README.md
+
 </pre>
