@@ -2,7 +2,7 @@ version: '2'
 services:
   project:
     build: ./display
-    command: npm run start
+    command: npm run start-prod
     restart: always
     ports:
       - "3000:3000"
