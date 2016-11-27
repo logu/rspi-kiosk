@@ -14,7 +14,8 @@
     "express": "~4.13.4",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0",
-    "socket.io": "^1.5.0"
+    "socket.io": "^1.5.0",
+    "jade": "~1.11.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
@@ -29,7 +30,6 @@
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.25.0",
     "debug": "^2.2.0",
-    "jade": "~1.11.0",
     "exports-loader": "^0.6.3",
     "expose-loader": "^0.7.1",
     "extract-text-webpack-plugin": "^1.0.1",
