@@ -25,3 +25,41 @@ git clone https://github.com/logu/rspi-kiosk.git
 cd rspi-kiosk
 docker-compose up -d
 ````
+
+##Project structure
+
+###Display
+Node js project this is what is displayed on the screen .
+
+##### Used technologies
+
+JavaScript
+- [Node](https://nodejs.org/)
+
+Templating
+- [Jade](https://pugjs.org/api/getting-started.html)
+
+Styles
+- [Stylus](http://stylus-lang.com/)
+
+Automation
+- [Webpack](https://webpack.github.io/docs/)
+
+Code Management
+- [Git](https://git-scm.com/)
+
+
+#### Build & Deployment Process
+
+This starter kit includes a build system by which source can be transpiled, converted and compressed in preparation for production use. For this task, [Webpack](https://webpack.github.io/docs/) is used.
+
+##### Use Webpack
+
+`webpack`: Buils css and transpile JS
+
+#### Directory structure
+
+The root directory generated for the app :
+<pre>
+├──  veggie-forest/
+</pre>
