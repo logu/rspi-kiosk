@@ -13,7 +13,7 @@ services:
   x11:
     build: ./tools/docker/dockerfiles/x11/
     environment:
-      - DISPLAY
+      - DISPLAY=:0
       - QT_X11_NO_MITSHM=1
     restart: always
     volumes:
